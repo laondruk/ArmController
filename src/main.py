@@ -1,15 +1,21 @@
-from PyQt5 import QtWidgets    #PyQt5 호출
 import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 
-class window(QtWidgets.QWidget):   #window 창 설정
+class window(QWidget):   #window 창 설정
 
     def __init__(self):
         super(window,self).__init__()
-        self.setGeometry(300, 300, 320, 240)   #window 크기
-        self.setWindowTitle('ArmController')   #window 명칭
-        self.show()                            #window 창 실행
+        self.setGeometry(300, 300, 1920, 1080)   #window 크기
+        self.setWindowTitle('ArmController')   #window 명칭               
+        self.initUI()
+
+    def initUI(self):
+        btn1 = QPushButton("BTN", self)
+        btn1.move(960, 540)
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     win = window()
+    win.show()
     app.exec_()
