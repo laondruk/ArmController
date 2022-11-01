@@ -13,6 +13,10 @@ class window(QWidget):   #window Ã¢ ¼³Á¤
     def initUI(self):
         btn1 = QPushButton("BTN", self)
         btn1.move(960, 540)
+        btn1.clicked.connect(self.bt1_clicked)
+
+    def bt1_clicked(self):
+        QMessageBox.about(self, "message", "clicked")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
